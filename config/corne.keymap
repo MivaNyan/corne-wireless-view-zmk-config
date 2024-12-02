@@ -28,14 +28,14 @@
 
                 lower_layer {
 // NUMPAD-LAYER-----------------------------------------------------------------------------
-// | BSPC |  1  |  2  |  3  |  -  |  /  |   |     |     |     |     |  [  |  ]  |
-// | SHFT |  4  |  5  |  6  |  +  |  *  |   |     |     |     |     |     |     |
-// | CTRL |  7  |  8  |  9  |  0  |  .  |   |     |     |     |     |     |     |
+// | BSPC |  1  |  2  |  3  |  -  |  /  |   |BTCLR| BT1 |     |     |  [  |  ]  |
+// | SHFT |  4  |  5  |  6  |  +  |  *  |   | BT1 |     |     |     |     |     |
+// | CTRL |  7  |  8  |  9  |  0  |  .  |   | BT2 |     |     |     |     |     |
 //                  |  GUI  | mo  | ENT |   | ENT |     | ALT |
                         bindings = <
-   &kp BSPC   &kp N1  &kp N2  &kp N3  &kp MINUS &kp FSLH       &trans  &trans &trans &trans &kp LBKT &kp RBKT
-   &kp LSHFT  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp ASTRK      &trans  &trans &trans &trans &trans   &trans
-   &kp LCTRL  &kp N7  &kp N8  &kp N9  &kp N0    &kp DOT        &trans  &trans &trans &trans &trans   &trans
+   &kp BSPC   &kp N1  &kp N2  &kp N3  &kp MINUS &kp FSLH       &bt BT_CLR    &trans &trans &trans &kp LBKT &kp RBKT
+   &kp LSHFT  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp ASTRK      &bt BT_SEL 0  &trans &trans &trans &trans   &trans
+   &kp LCTRL  &kp N7  &kp N8  &kp N9  &kp N0    &kp DOT        &bt BT_SEL 1  &trans &trans &trans &trans   &trans
                               &kp LGUI &trans   &kp RET        &kp RET &trans &kp RALT
                         >;
                 };
@@ -45,7 +45,7 @@
 // |  TAB | BSPC|  UP  | RET | DEL |     |   |     |     |     |  (  |  )  | BSPC |
 // | SHFT | LFT | DWN  | RGT |Home |PG_UP|   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | CTRL |     |      |     | END |PG_DN|   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                     | mo  |     | SPC |   | ENT |     | ALT |
+//                     | mo  | ALT | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  TAB  &kp BSPC &kp UP   &kp RET   &kp DEL  &trans         &trans    &trans    &trans    &kp LPAR &kp RPAR &kp BSPC
    &kp LSHFT &kp LEFT &kp DOWN &kp RIGHT &kp HOME &kp PG_UP      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
