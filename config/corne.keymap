@@ -67,5 +67,17 @@
                               &kp N0  &kp DOT   &to 0          &kp SPC    &kp RET      &kp LALT
                         >;
                 };
+
+                extra_1 {
+                        status = "reserved";
+                };
+
+                extra_2 {
+                        status = "reserved";
+                };
+
+                extra_3 {
+                        status = "reserved";
+                };
         };
 };
