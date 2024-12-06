@@ -58,13 +58,41 @@
 // 3-----------------------------------------------------------------------------------------
 // | BSPC  |  7  |  8  |  9  |  -  |  /  |   |BTCLR| BT1 | BT2 | BT3 | BT4 |     |
 // | RET   |  4  |  5  |  6  |  +  |  *  |   |     |     |     |     |     |     |
-// | CTRL  |  1  |  2  |  3  | LFT | RGT |   |     |     |     |     |     |     |
-//                     |  0  |  .  | L1  |   | SPC | ENT | ALT |
+// |   .   |  1  |  2  |  3  | LFT | RGT |   |     |     |     |     |     |     |
+//                     |  0  | L5  | L1  |   | SPC | ENT | ALT |
                         bindings = <
    &kp BSPC   &kp N7  &kp N8  &kp N9  &kp MINUS &kp FSLH       &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans
    &kp LSHFT  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp ASTRK      &trans     &trans       &trans       &trans       &trans       &trans
-   &kp LCTRL  &kp N1  &kp N2  &kp N3  &kp LEFT  &kp RIGHT      &trans     &trans       &trans       &trans       &trans       &trans
-                              &kp N0  &kp DOT   &to 0          &kp SPC    &kp RET      &kp LALT
+   &kp DOT    &kp N1  &kp N2  &kp N3  &kp LEFT  &kp RIGHT      &trans     &trans       &trans       &trans       &trans       &trans
+                              &kp N0  &to 4   &to 0          &kp SPC    &kp RET      &kp LALT
+                        >;
+                };
+
+                game_layer1 {
+// 4-----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
+//                         |ALT| L6 |SPC|   | ENT |  [   |  ]  |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp DEL
+                   &kp LALT &mo 5 &kp SPC    &kp RET      &kp LBKT  &kp RBKT
+                        >;
+                };
+
+                 game_layer2 {
+// 5-----------------------------------------------------------------------------------------
+// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |BSPC |
+// | SHFT |     |     | UP  |     |     |   |PG_UP|  +  |  -  |  [  |  ]  |  \  |
+// | CTRL |     | LFT | DWN |RIGHT|     |   |PG_DN|  _  |  =  |  {  |  }  |  ~  |
+//                    | GUI | L6  | L1  |   | SPC | ENT | ALT |
+                        bindings = <
+   &kp ESC   &kp N1   &kp N2   &kp N3  &kp N4      &kp N5        &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp BSPC
+   &kp LSHFT &trans   &trans   &kp UP   &trans    &trans      &kp PG_UP &kp PLUS &kp MINUS  &kp LBKT  &kp RBKT  &kp BSLH
+   &kp LCTRL &trans   &kp LEFT &kp DOWN &kp RIGHT &trans      &kp PG_DN &kp UNDER &kp EQUAL &kp LBRC  &kp RBRC &kp TILDE
+                               &kp LGUI &trans    &to 0       &kp SPC &kp RET &kp LALT
                         >;
                 };
 
