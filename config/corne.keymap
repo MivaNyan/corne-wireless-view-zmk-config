@@ -9,12 +9,14 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    combos { compatible = "zmk,combos"; };
 
-        layer_0 {
-            bindings = <&mo 1>;
-            key-positions = <36 37>;
+    behaviors {
+        WinAlt: WinAlt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "WINALT";
+            #binding-cells = <0>;
+            bindings = <&kp LWIN>, <&kp LALT>;
         };
     };
 
@@ -29,10 +31,10 @@
             //                 |GUI/ENT| L2 |ALT/SPC|   | ENT |  [   |  ]  |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E           &kp R     &kp T        &kp Y    &kp U          &kp I      &kp O    &kp P     &kp LBKT
-&kp LSHFT  &kp A  &kp S  &kp D           &kp F     &kp G        &kp H    &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C           &kp V     &kp B        &kp N    &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RBKT
-                         &mt LGUI ENTER  &kp LALT  &kp SPACE    &kp RET  &kp BACKSPACE  &kp DEL
+&kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T        &kp Y    &kp U          &kp I      &kp O    &kp P     &kp LBKT
+&kp LSHFT  &kp A  &kp S  &kp D    &kp F  &kp G        &kp H    &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C    &kp V  &kp B        &kp N    &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RBKT
+                         &WinAlt  &mo 1  &kp SPACE    &kp RET  &kp BACKSPACE  &kp DEL
             >;
         };
 
@@ -44,10 +46,10 @@
             //                    | GUI | L1  | L3  |   | SPC | ENT | ALT |
 
             bindings = <
-&kp ESC    &kp N1        &kp N2    &kp N3    &kp N4     &kp N5    &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp LSHFT  &mt END HOME  &kp BSPC  &kp UP    &kp DEL    &to 2     &kp PG_UP  &kp MINUS  &kp PLUS   &kp LBKT  &kp RBKT  &kp BSLH
-&kp LCTRL  &kp LWIN      &kp LEFT  &kp DOWN  &kp RIGHT  &to 3     &kp PG_DN  &kp UNDER  &kp EQUAL  &kp LBRC  &kp RBRC  &kp TILDE
-                                   &trans    &trans     &trans    &kp SPACE  &kp RET    &kp LALT
+&kp ESC    &kp N1    &kp N2    &kp N3    &kp N4     &kp N5              &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
+&kp LSHFT  &kp HOME  &kp BSPC  &kp UP    &kp DEL    &to 2               &kp PG_UP  &kp MINUS  &kp PLUS   &kp LBKT  &kp RBKT  &kp BSLH
+&kp LCTRL  &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &to 3               &kp PG_DN  &kp UNDER  &kp EQUAL  &kp LBRC  &kp RBRC  &kp TILDE
+                               &kp LWIN  &trans     &kp C_PLAY_PAUSE    &kp SPACE  &kp RET    &kp LALT
             >;
         };
 
