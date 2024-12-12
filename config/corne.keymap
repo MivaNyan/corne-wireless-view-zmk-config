@@ -44,10 +44,10 @@
             //                    | GUI | L1  | L3  |   | SPC | ENT | ALT |
 
             bindings = <
-&kp ESC    &kp N1    &kp N2    &kp N3    &kp N4     &kp N5       &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp LSHFT  &kp HOME  &kp BSPC  &kp UP    &kp DEL    &kp MINUS    &kp PG_UP  &kp PLUS   &kp MINUS  &kp LBKT  &kp RBKT  &kp BSLH
-&kp LCTRL  &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &kp FSLH     &kp PG_DN  &kp UNDER  &kp EQUAL  &kp LBRC  &kp RBRC  &kp TILDE
-                               &kp LGUI  &trans     &to 2        &kp SPACE  &kp RET    &kp LALT
+&kp ESC    &kp N1        &kp N2    &kp N3    &kp N4     &kp N5    &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
+&kp LSHFT  &mt END HOME  &kp BSPC  &kp UP    &kp DEL    &to 2     &kp PG_UP  &kp MINUS  &kp PLUS   &kp LBKT  &kp RBKT  &kp BSLH
+&kp LCTRL  &kp LWIN      &kp LEFT  &kp DOWN  &kp RIGHT  &to 3     &kp PG_DN  &kp UNDER  &kp EQUAL  &kp LBRC  &kp RBRC  &kp TILDE
+                                   &trans    &trans     &trans    &kp SPACE  &kp RET    &kp LALT
             >;
         };
 
@@ -75,9 +75,9 @@
 
             bindings = <
 &kp BSPC   &kp N7  &kp N8  &kp N9  &kp MINUS  &kp FSLH     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
-&kp LSHFT  &kp N4  &kp N5  &kp N6  &kp PLUS   &kp ASTRK    &trans        &trans        &trans        &trans        &trans        &trans
+&kp ENTER  &kp N4  &kp N5  &kp N6  &kp PLUS   &kp ASTRK    &trans        &trans        &trans        &trans        &trans        &trans
 &kp DOT    &kp N1  &kp N2  &kp N3  &kp LEFT   &kp RIGHT    &trans        &trans        &trans        &trans        &trans        &bt BT_CLR
-                           &kp N0  &to 0      &kp ENTER    &kp SPACE     &kp RET       &kp LALT
+                           &kp N0  &kp SPACE  &to 0        &trans        &trans        &trans
             >;
         };
     };
