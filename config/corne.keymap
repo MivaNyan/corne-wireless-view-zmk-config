@@ -63,7 +63,7 @@
                                &kp LWIN  &trans     &kp ENTER    &kp SPACE  &trans     &kp LALT
             >;
 
-            label = "CHAR_NAV";
+            label = "CHARNAV";
         };
 
         function_layer {
@@ -80,7 +80,7 @@
                                        &kp LEFT_ALT  &to 3       &to 0           &kp SPACE  &kp RET  &kp LWIN
             >;
 
-            label = "FUNCTION";
+            label = "FUNC";
         };
 
         numpad_layer {
