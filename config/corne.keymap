@@ -63,7 +63,7 @@
                                &kp LWIN  &trans     &kp ENTER    &kp SPACE  &trans     &kp LALT
             >;
 
-            label = "CHARNAV";
+            label = "CHARS";
         };
 
         function_layer {
