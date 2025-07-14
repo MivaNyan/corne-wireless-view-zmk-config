@@ -52,11 +52,6 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // 0-----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | DEL  |
-            //                 |GUI/ENT| L2 |ALT/SPC|   | ENT |  [   |  ]  |
 
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E    &kp R          &kp T        &kp Y    &kp U          &kp I      &kp O    &kp P     &kp LBKT
@@ -69,11 +64,6 @@
         };
 
         charnav_layer {
-            // 1-----------------------------------------------------------------------------------------
-            // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |BSPC |
-            // | SHFT |HOME |BSPC | UP  | DEL |  -  |   |PG_UP|  +  |  -  |  [  |  ]  |  \  |
-            // | CTRL | END | LFT | DWN | RGT |  /  |   |PG_DN|  _  |  =  |  {  |  }  |  ~  |
-            //                    | GUI | L1  | L3  |   | SPC | ENT | ALT |
 
             bindings = <
 &EscTilde  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5       &kp N6     &kp N7         &kp N8     &kp N9     &kp N0     &kp BACKSLASH
@@ -86,11 +76,6 @@
         };
 
         function_layer {
-            // 2-----------------------------------------------------------------------------------------
-            // |  F1  | F2  |  F3  |  F4  | F5  | F6  |   | F7  | F8  | F9  | F10 | F11 | F12  |
-            // | SHFT |CAPS |PSCRN |C_NEXT|C_PP |  +  |   |     |     |     |     |     |      |
-            // | CTRL | ALT |      |C_PREV|C_MUTE| -  |   | INS |     |     |     |     |      |
-            //                     | GUI |  L4  | L1  |   | SPC | ENT | ALT |
 
             bindings = <
 &kp ESCAPE  &kp F1    &kp F2           &kp F3      &kp F4      &kp F5          &kp F6      &kp F7          &kp F8        &kp F9          &kp F10          &kp INS
@@ -103,11 +88,6 @@
         };
 
         numpad_layer {
-            // 3-----------------------------------------------------------------------------------------
-            // | BSPC  |  7  |  8  |  9  |  -  |  /  |   |BTCLR| BT1 | BT2 | BT3 | BT4 |     |
-            // | RET   |  4  |  5  |  6  |  +  |  *  |   |     |     |     |     |     |     |
-            // |   .   |  1  |  2  |  3  | LFT | RGT |   |     |     |     |     |     |     |
-            //                     |  0  | L5  | L1  |   | SPC | ENT | ALT |
 
             bindings = <
 &kp BSPC        &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS    &kp KP_NUMLOCK  &trans  &trans    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
