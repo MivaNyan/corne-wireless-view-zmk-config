@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -42,7 +41,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_TOGGLE";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 5>;
+            bindings = <&mo 1>, <&mo 2>;
 
             tapping-term-ms = <220>;
         };
@@ -77,9 +76,9 @@
 
             bindings = <
 &EscTilde  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5       &kp N6     &kp N7   &kp N8    &kp N9     &kp N0     &kp BACKSLASH
-&kp LSHFT  &kp HOME  &kp BSPC  &kp UP    &kp DEL    &to 2        &kp PG_UP  &trans   &trans    &kp MINUS  &kp EQUAL  &kp CAPS
-&kp LCTRL  &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &to 3        &kp PG_DN  &trans   &trans    &kp DOT    &kp FSLH   &kp GRAVE
-                               &kp LWIN  &trans     &kp ENTER    &kp SPACE  &kp DOT  &kp LALT
+&kp LSHFT  &kp HOME  &kp BSPC  &kp UP    &kp DEL    &to 3        &kp PG_UP  &trans   &trans    &kp MINUS  &kp EQUAL  &kp CAPS
+&kp LCTRL  &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &trans       &kp PG_DN  &trans   &trans    &kp DOT    &kp FSLH   &kp GRAVE
+                               &trans    &trans     &kp ENTER    &kp SPACE  &kp DOT  &kp LALT
             >;
 
             label = "CHARS";
@@ -93,10 +92,10 @@
             //                     | GUI |  L4  | L1  |   | SPC | ENT | ALT |
 
             bindings = <
-&kp ESCAPE  &kp F1   &kp F2           &kp F3        &kp F4      &kp F5          &kp F6     &kp F7   &kp F8    &kp F9  &kp F10  &kp INS
-&kp LSHFT   &kp F11  &kp F12          &kp C_NEXT    &kp C_PP    &kp C_VOL_UP    &trans     &trans   &trans    &trans  &trans   &kp CAPS
-&kp LCTRL   &to 5    &kp PRINTSCREEN  &kp C_PREV    &kp C_MUTE  &kp C_VOL_DN    &trans     &trans   &trans    &trans  &trans   &to 4
-                                      &kp LEFT_ALT  &to 3       &to 0           &kp SPACE  &kp RET  &kp LWIN
+&kp ESCAPE  &kp F1    &kp F2           &kp F3      &kp F4      &kp F5          &kp F6      &kp F7        &kp F8        &kp F9        &kp F10       &kp INS
+&kp LSHFT   &kp F11   &kp F12          &kp C_NEXT  &kp C_PP    &kp C_VOL_UP    &trans      &trans        &trans        &trans        &trans        &trans
+&kp LCTRL   &kp CAPS  &kp PRINTSCREEN  &kp C_PREV  &kp C_MUTE  &kp C_VOL_DN    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                                       &trans      &trans      &trans          &kp SPACE   &kp RET       &kp LWIN
             >;
 
             label = "FUNC";
@@ -117,28 +116,6 @@
             >;
 
             label = "NUMPAD";
-        };
-
-        Bluetooth {
-            bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans        &trans        &to 0           &trans  &trans  &trans
-            >;
-
-            label = "BLUE";
-        };
-
-        qwerty_mirror {
-            bindings = <
-&kp LBKT  &kp P     &kp O    &kp I      &kp U   &kp Y        &trans  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &trans  &trans
-&kp APOS  &kp SEMI  &kp L    &kp K      &kp J   &kp H        &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&kp RBKT  &kp FSLH  &kp DOT  &kp COMMA  &kp M   &kp N        &trans  &msc SCRL_DOWN  &mkp MB3        &msc SCRL_UP     &trans  &trans
-                             &trans     &trans  &kp SPACE    &trans  &trans          &trans
-            >;
-
-            label = "MIROR";
         };
     };
 };
