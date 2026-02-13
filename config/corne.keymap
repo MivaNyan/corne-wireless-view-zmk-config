@@ -12,11 +12,11 @@
     combos { compatible = "zmk,combos"; };
 
     behaviors {
-        WinAlt: WinAlt {
+        CtrlAlt: CtrlAlt {
             compatible = "zmk,behavior-tap-dance";
-            label = "WINALT";
+            label = "CTRLALT";
             #binding-cells = <0>;
-            bindings = <&kp LWIN>, <&kp LALT>;
+            bindings = <&kp LCTRL>, <&kp LALT>;
 
             tapping-term-ms = <220>;
         };
@@ -36,10 +36,10 @@
 
         default_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E    &kp R          &kp T        &kp Y    &kp U          &kp I      &kp O    &kp P     &kp LBKT
-&kp LSHFT  &kp A  &kp S  &kp D    &kp F          &kp G        &kp H    &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C    &kp V          &kp B        &kp N    &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp RBKT
-                         &WinAlt  &layer_toggle  &kp SPACE    &kp RET  &kp BACKSPACE  &kp DEL
+&kp TAB    &kp Q  &kp W  &kp E         &kp R          &kp T        &kp Y    &kp U          &kp I         &kp O    &kp P     &kp LBKT
+&kp LSHFT  &kp A  &kp S  &kp D         &kp F          &kp G        &kp H    &kp J          &kp K         &kp L    &kp SEMI  &kp SQT
+&CtrlAlt   &kp Z  &kp X  &kp C         &kp V          &kp B        &kp N    &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp RBKT
+                         &kp LEFT_GUI  &layer_toggle  &kp SPACE    &kp RET  &kp BACKSPACE  &kp LEFT_ALT
             >;
 
             label = "QWERTY";
@@ -47,10 +47,10 @@
 
         charnav_layer {
             bindings = <
-&kp ESCAPE  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5        &kp N6     &kp N7         &kp N8     &kp N9     &kp N0     &kp BACKSLASH
-&kp LSHFT   &kp HOME  &kp BSPC  &kp UP    &kp DEL    &caps_word    &kp PG_UP  &trans         &trans     &kp MINUS  &kp EQUAL  &kp CAPS
-&kp LCTRL   &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &to 3         &kp PG_DN  &trans         &kp COMMA  &kp DOT    &kp FSLH   &kp GRAVE
-                                &trans    &trans     &kp ENTER     &kp SPACE  &kp BACKSPACE  &kp LALT
+&kp ESCAPE  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5        &kp N6     &kp N7  &kp N8  &kp N9     &kp N0     &kp BACKSLASH
+&trans      &kp HOME  &kp BSPC  &kp UP    &kp DEL    &caps_word    &kp PG_UP  &trans  &trans  &kp MINUS  &kp EQUAL  &kp CAPS
+&trans      &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &to 3         &kp PG_DN  &trans  &trans  &trans     &trans     &trans
+                                &trans    &trans     &kp ENTER     &kp SPACE  &trans  &trans
             >;
 
             label = "CHARS";
@@ -58,10 +58,10 @@
 
         function_layer {
             bindings = <
-&none      &kp F1    &kp F2           &kp F3      &kp F4      &kp F5          &kp F6      &kp F7         &kp F8        &kp F9        &kp F10       &kp INS
-&kp LSHFT  &kp F11   &kp F12          &kp C_NEXT  &kp C_PP    &kp C_VOL_UP    &kp F13     &kp F14        &kp F19       &kp F20       &kp F21       &kp F22
-&kp LCTRL  &kp CAPS  &kp PRINTSCREEN  &kp C_PREV  &kp C_MUTE  &kp C_VOL_DN    &bt BT_CLR  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-                                      &trans      &trans      &kp ENTER       &kp SPACE   &kp BACKSPACE  &kp LALT
+&kp GRAVE  &kp F1   &kp F2           &kp F3      &kp F4      &kp F5          &kp F6      &kp F7        &kp F8        &kp F9        &kp F10       &kp INS
+&trans     &kp F11  &kp F12          &kp C_NEXT  &kp C_PP    &kp C_VOL_UP    &kp F13     &kp F14       &kp F15       &kp F16       &kp F17       &kp F18
+&trans     &trans   &kp PRINTSCREEN  &kp C_PREV  &kp C_MUTE  &kp C_VOL_DN    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                                     &trans      &trans      &kp ENTER       &kp SPACE   &trans        &trans
             >;
 
             label = "FUNC";
@@ -69,10 +69,10 @@
 
         numpad_layer {
             bindings = <
-&kp BSPC        &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS    &trans  &trans  &trans    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
-&kp ENTER       &kp ASTRK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS     &trans  &trans  &trans    &kp LBKT              &kp RBKT               &trans
-&kp LEFT_ARROW  &kp RIGHT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &to 0        &trans  &trans  &trans    &kp LBRC              &kp RBRC               &kp KP_NUMLOCK
-                                            &kp KP_NUMBER_0  &kp KP_DOT       &kp SPACE    &trans  &trans  &kp LALT
+&kp BSPC        &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS    &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL
+&kp SPACE       &kp ASTRK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS     &trans  &trans  &trans  &kp LBKT              &kp RBKT               &trans
+&kp LEFT_ARROW  &kp RIGHT  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &to 0        &trans  &trans  &trans  &kp LBRC              &kp RBRC               &kp KP_NUMLOCK
+                                            &kp KP_NUMBER_0  &kp KP_DOT       &kp ENTER    &trans  &trans  &trans
             >;
 
             label = "NUMPAD";
