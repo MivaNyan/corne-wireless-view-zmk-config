@@ -7,16 +7,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos { compatible = "zmk,combos"; };
 
     behaviors {
-        CtrlAlt: CtrlAlt {
+        WinAlt: WinAlt {
             compatible = "zmk,behavior-tap-dance";
-            label = "CTRLALT";
+            label = "WINALT";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&kp LALT>;
+            bindings = <&kp LEFT_GUI>, <&kp LALT>;
 
             tapping-term-ms = <220>;
         };
@@ -36,10 +37,10 @@
 
         default_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E         &kp R          &kp T        &kp Y    &kp U          &kp I         &kp O    &kp P     &kp LBKT
-&kp LSHFT  &kp A  &kp S  &kp D         &kp F          &kp G        &kp H    &kp J          &kp K         &kp L    &kp SEMI  &kp SQT
-&CtrlAlt   &kp Z  &kp X  &kp C         &kp V          &kp B        &kp N    &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp RBKT
-                         &kp LEFT_GUI  &layer_toggle  &kp SPACE    &kp RET  &kp BACKSPACE  &kp LEFT_ALT
+&kp TAB    &kp Q  &kp W  &kp E    &kp R          &kp T        &kp Y    &kp U          &kp I         &kp O    &kp P     &kp LBKT
+&kp LSHFT  &kp A  &kp S  &kp D    &kp F          &kp G        &kp H    &kp J          &kp K         &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C    &kp V          &kp B        &kp N    &kp M          &kp COMMA     &kp DOT  &kp FSLH  &kp RBKT
+                         &WinAlt  &layer_toggle  &kp SPACE    &kp RET  &kp BACKSPACE  &kp LEFT_ALT
             >;
 
             label = "QWERTY";
@@ -47,10 +48,10 @@
 
         charnav_layer {
             bindings = <
-&kp ESCAPE  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5        &kp N6     &kp N7  &kp N8  &kp N9     &kp N0     &kp BACKSLASH
-&trans      &kp HOME  &kp BSPC  &kp UP    &kp DEL    &caps_word    &kp PG_UP  &trans  &trans  &kp MINUS  &kp EQUAL  &kp CAPS
-&trans      &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &to 3         &kp PG_DN  &trans  &trans  &trans     &trans     &trans
-                                &trans    &trans     &kp ENTER     &kp SPACE  &trans  &trans
+&kp ESCAPE  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5        &kp N6     &kp N7          &kp N8          &kp N9           &kp N0        &kp BACKSLASH
+&trans      &kp HOME  &kp BSPC  &kp UP    &kp DEL    &caps_word    &kp PG_UP  &mkp LCLK       &mmv MOVE_UP    &kp MINUS        &kp EQUAL     &kp CAPS
+&trans      &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &to 3         &kp PG_DN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP  &msc SCRL_DOWN
+                                &trans    &trans     &kp ENTER     &kp SPACE  &trans          &trans
             >;
 
             label = "CHARS";
